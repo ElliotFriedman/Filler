@@ -1,13 +1,15 @@
 #include "../filler.h"
 
-void		get_plateau(void)
+int		main(void)
 {
-	char	buf[2];
+	char	*buf;
 
-	buf[0] = 0;
-	while (read(0, buf, 1) > 0)
-		printf("%s", buf);
-	printf("\n");
+	buf = ft_strnew(0);
+	while (get_next_line(0, &buf) > 0)
+	{
+		ft_printf("%s\n", buf);
+		free(buf);
+	}
 
-
+	return 0;
 }
