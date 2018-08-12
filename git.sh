@@ -1,3 +1,4 @@
+rm .DS_Store
 make fclean
 git add .
 git commit -m "${1}"
