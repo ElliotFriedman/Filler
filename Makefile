@@ -6,7 +6,7 @@
 #    By: efriedma <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/12 15:49:44 by efriedma          #+#    #+#              #
-#    Updated: 2018/08/12 22:39:30 by efriedma         ###   ########.fr        #
+#    Updated: 2018/08/12 23:18:28 by efriedma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,13 +28,12 @@ DPRINTF = src/ft_dprintf/libftdprintf.a ft_printf/libftprintf.a
 
 all: $(NAME)
 
-$(DEPEND):
-	$(MAKE) -C $(DEPEND_DIR)
-	$(MAKE) -C $(DDEPEND_DIR)
-
 $(NAME): $(DEPEND)
 	$(MAKE) -C $(DEPEND_DIR)
 	$(MAKE) -C $(DDEPEND_DIR)
+	gcc $(CFLAGS) $(GNL) $(SRC) $(DPRINTF) -o $(NAME)
+
+go:
 	gcc $(CFLAGS) $(GNL) $(SRC) $(DPRINTF) -o $(NAME)
 
 clean:

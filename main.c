@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: efriedma <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/12 23:14:23 by efriedma          #+#    #+#             */
+/*   Updated: 2018/08/13 12:48:40 by efriedma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "filler.h"
 
 //x,y coords for input block
@@ -114,11 +126,11 @@ void	find_player(void)
 
 int		main(void)
 {
-	char	*buf;
+//	char	*buf;
 	int		i = 1;
 
-	ft_putendl("\n\n\n\nHELLO\n\n\n\n\n");
-	find_player();
+	ft_putendl("12 11");
+	/*find_player();
 	while (i)
 	{
 		if (get_next_line(0, &buf))
@@ -128,7 +140,8 @@ int		main(void)
 			ft_dprintf(1, "%s\n", buf);
 			free(buf);
 		}
-	//	i = 0;
+		i = 0;
 	}
+	*/
 	return 0;
 }
