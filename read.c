@@ -3,15 +3,18 @@
 int		main(void)
 {
 	char	*buf;
+	int		i = 1;
 
-	buf = malloc(sizeof(char*));
-	ft_dprintf(0, "hi\n");
-	
-	while (get_next_line(0, &buf) > 0)
+	ft_dprintf(0, "hello world\n");
+
+	while (i)
 	{
-		ft_dprintf(1, "%s\n", buf);
-		free(buf);
+		while (get_next_line(0, &buf) > 0)
+		{
+			ft_dprintf(1, "\n%s\n", buf);
+			free(buf);
+		}
+		i = 0;
 	}
-
 	return 0;
 }
