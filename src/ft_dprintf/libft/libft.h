@@ -1,38 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   filler.h                                           :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: efriedma <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/12 15:58:13 by efriedma          #+#    #+#             */
-/*   Updated: 2018/08/12 19:58:48 by efriedma         ###   ########.fr       */
+/*   Created: 2018/02/24 17:02:44 by efriedma          #+#    #+#             */
+/*   Updated: 2018/05/25 17:13:23 by efriedma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILLER_H
-# define FILLER_H
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+# include "unistd.h"
+# include "stdlib.h"
 # include <wchar.h>
-# include "src/get_next_line/get_next_line.h"
-//# include "ft_printf/includes/ft_printf.h"
 
-int					ft_printf(const char *str, ...);
-int					ft_dprintf(int fd, const char *str, ...);
+typedef struct	s_data
+{
+	int			negative;
+	int			precision;
+	int			precheck;
+	int			plus;
+	int			hash;
+	int			sum;
+	int			upper;
+	int			chrfil;
+	int			lr;
+	char		mod[2];
+	int			len;
+	int			iter;
+	int			pad;
+	int			chk;
+	int			fd;
+}				t_data;
+
+typedef struct	s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}				t_list;
 
 char			*ft_uitoabase(unsigned long long nbr, int base);
 char			*ft_itoabase(long long nbr, int base);
 char			*ft_malset(int size, char set);
-unsigned char	*ft_umalset(int size, unsigned char set);
 wchar_t			*ft_wstrdup(const char *s);
 int				ft_wstrlen(wchar_t *str);
-void			ft_putwchar(wchar_t c);
+void			ft_nwputstr(wchar_t *str, t_data *curr, int i);
+void			ft_putwchar(wchar_t c, t_data *curr);
+void			ft_wputstr(wchar_t *str, t_data *curr);
+void			init(t_data *curr);
 char			*upper(char *print);
+char			*make_pre(t_data *curr, char *print);
+char			*make_pad(t_data *curr, char *print);
 char			*prep_x(char *print, char *prep);
 int				find_len(const char *str);
 int				ft_matoi(const char *str);
+void			ft_mputstr(char *str, t_data *curr);
 void			*ft_memchr(const void *s, int c, size_t n);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_striter(char *s, void (*f)(char *));
@@ -85,6 +110,12 @@ void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void			ft_putnbr(int n);
 int				ft_strequ(char const *s1, char const *s2);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
+void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void			ft_lstadd(t_list **alst, t_list *new);
+void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+t_list			*ft_lstnew(void const *content, size_t content_size);
 int				ft_multiply(int a, int b);
 int				ft_divide(int a, int b);
 int				ft_add(int a, int b);
@@ -92,6 +123,4 @@ int				ft_subtract(int a, int b);
 char			**ft_getnextline(char *str);
 char			*ft_capitalize(char *str);
 int				ft_wordcount(char *str);
-char			*ft_memjoin(void *a1, void *b1, size_t asize, size_t bsize);
-
 #endif
