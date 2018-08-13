@@ -97,13 +97,16 @@ void	find_player(void)
 		ft_putendl("\nError, could not read in player number\n\n");
 		exit(0);
 	}
+	ft_dprintf(1, "\n\n\n\n read %s from stdin\n\n\n\n\n\n", buf);
 	if (ft_strstr(buf, "p2"))
 	{
+		ft_putendl("\n\n\nPlayer 2\n\n\n\n\n");
 		g_num = 2;
 		g_char = 'X';
 	}
 	else if (ft_strstr(buf, "p1"))
 	{
+		ft_putendl("\n\n\n\n\n\n\nPlayer 1\n\n\n\n\n\n");
 		g_num = 1;
 		g_char = 'O';
 	}
@@ -114,6 +117,7 @@ int		main(void)
 	char	*buf;
 	int		i = 1;
 
+	ft_putendl("\n\n\n\nHELLO\n\n\n\n\n");
 	find_player();
 	while (i)
 	{
