@@ -1,3 +1,4 @@
+rm a.out
 rm -rf filler.dSYM*
 rm src/.DS_Store
 rm .DS_Store
