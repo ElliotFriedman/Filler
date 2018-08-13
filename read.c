@@ -1,19 +1,20 @@
 #include "filler.h"
 
-//x,y coords for how big the input block we have to place
+//x,y coords for input block
 int		g_yin;
 int		g_xin;
 
-//x,y coords for how big the map is
+//x,y coords of map size
 int		g_mapx;
 int		g_mapy;
 
-//number your player is
+//player's number 
 int		g_num;
-//character that represents your player
+//player's character
 char	g_char;
 
 /*
+ * this function will manipulate coordinates so that they can be placed on the map
 void	push_coord(char **str, int *x, int *y)
 {
 	size_t	i;
