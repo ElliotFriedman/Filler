@@ -6,13 +6,13 @@
 #    By: efriedma <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/12 15:49:44 by efriedma          #+#    #+#              #
-#    Updated: 2018/08/12 20:02:54 by efriedma         ###   ########.fr        #
+#    Updated: 2018/08/12 22:39:30 by efriedma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGS = -g -Wall -Wextra -Werror #-I src/ft_dprintf/libft -I src/ft_printf/libft -I src/ft_printf/includes -I src/ft_dprintf/includes -I src/get_next_line -I ./
 
-SRC = read.c
+SRC = main.c
 
 NAME = filler
 
