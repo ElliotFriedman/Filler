@@ -1,4 +1,5 @@
-src/.DS_Store
+rm -rf filler.dSYM*
+rm src/.DS_Store
 rm .DS_Store
 make fclean
 git add .
