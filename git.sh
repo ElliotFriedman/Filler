@@ -1,3 +1,4 @@
+rm filler.trace 
 rm a.out
 rm -rf filler.dSYM*
 rm src/.DS_Store
